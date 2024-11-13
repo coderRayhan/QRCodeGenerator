@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QRGenerator.QRGenerator"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             Title="QR Code Generator">
+    <StackLayout Padding="20" Spacing="20">
+        <Editor 
+            x:Name="InputText" 
+            Placeholder="Enter text for QR code"
+            AutoSize="TextChanges"/>
+        <Button 
+            Text="Generate QR Code"
+            HorizontalOptions="Center"
+            Clicked="OnGenerateQrCodeClicked"/>
+
+        <!-- Display the generated QR code -->
+        <zxing:BarcodeGeneratorView x:Name="QrCodeImageView"
+                                     Format="QrCode"
+                                     WidthRequest="200"
+                                     HeightRequest="200"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center"/>
+
+        <!-- Download QR Code Button -->
+        <Button 
+            Text="Download QR Code" 
+            Clicked="OnDownloadQrCodeClicked"
+            x:Name="btnDownload"
+            IsVisible="False"/>
+    </StackLayout>
+</ContentPage>

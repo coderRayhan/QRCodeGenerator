@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="QRGenerator.QRScanner"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.MAUI.Controls"
+             Title="Scanner">
+    <!-- The Scanner view -->
+    <Grid RowSpacing="30" Padding="30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <zxing:CameraBarcodeReaderView 
+                               x:Name="cameraBarcodeReaderView"
+                               HeightRequest="300"
+                               HorizontalOptions="Center"
+                               BarcodesDetected="BarcodesDetected"
+                               CameraLocation="Rear"
+                Grid.Row="0"/>
+
+        <Button HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Clicked="OnSwitchCameraClicked"
+                    Grid.Row="1"
+                Margin="20"
+                BackgroundColor="Transparent">
+            <Button.ImageSource>
+                <FontImageSource FontFamily="FontAwesome" Glyph="&#xf021;" Size="34" Color="Black"/>
+            </Button.ImageSource>
+        </Button>
+        <Label
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            x:Name="textLabel"
+            FontAttributes="Bold"
+            Grid.Row="2"/>
+    </Grid>
+</ContentPage>

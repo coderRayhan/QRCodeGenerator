@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="QRGenerator.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:QRGenerator"
+    Shell.FlyoutBehavior="Disabled"
+    Title="QRGenerator">
+
+    <!--<ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />-->
+
+    <TabBar>
+        <Tab Title="Generator">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FontAwesome" Glyph="&#xf029;" Size="24" Color="Black"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:QRGenerator}" />
+        </Tab>
+        <Tab Title="Scanner">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FontAwesome"  Glyph="&#xf029;" Size="24" Color="Black"/>
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate local:QRScanner}" />
+        </Tab>
+    </TabBar>
+
+</Shell>
